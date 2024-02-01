@@ -1,0 +1,28 @@
+def is_palindrome(word):
+    # Convert the word to lowercase to make the comparison case-insensitive
+    word = word.lower()
+    
+    # Initialize pointers for the start and end of the word
+    start = 0
+    end = len(word) - 1
+
+    # Continue checking until the pointers meet
+    while start < end:
+        # If characters at the pointers are different, it's not a palindrome
+        if word[start] != word[end]:
+            return False
+        # Move the pointers towards the center
+        start += 1
+        end -= 1
+
+    # If the loop completes, it's a palindrome
+    return True
+
+# Example usage:
+word_to_check = "radar"
+result = is_palindrome(word_to_check)
+
+if result:
+    print(f"{word_to_check} is a palindrome.")
+else:
+    print(f"{word_to_check} is not a palindrome.")
